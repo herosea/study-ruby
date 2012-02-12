@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'/>
+<title>矩形和线条的绘制</title>
+<script>
+window.addEventListener('load', function(){
+  var elem = document.getElementById('myCanvas');
+  if (elem && elem.getContext){
+    var context = elem.getContext('2d');
+    if (context){
+      context.fillStyle = '#00f';
+      context.strokeStyle = '#f00';
+      context.lineWidth = 4;
+      context.fillRect(0, 0, 150, 50);
+      context.strokeRect(0, 60, 150,50);
+      context.clearRect( 30, 25, 90, 60);
+      context.strokeRect(30, 25, 90, 60);
+    }
+  }
+  var threeElem = document.getElementById("three");
+  if(threeElem && threeElem.getContext){
+    var threeContext = threeElem.getContext('2d');
+    if(threeContext){
+      threeContext.fillStyle = '#00f';
+      threeContext.strokeStyle = '#f00';
+      threeContext.lineWidth = 4;
+      threeContext.beginPath();
+      threeContext.moveTo(10, 10);
+      threeContext.lineTo(100, 10);
+      threeContext.lineTo(10, 100);
+      threeContext.lineTo(10, 10);
+      threeContext.fill();
+      threeContext.stroke();
+      threeContext.closePath();
+    }
+  }
+});
+</script>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="400">
+不支持HTML5
+</canvas>
+<canvas id="three" width="300" height="400">
+三角形
+</canvas>
+</body>
+</html>

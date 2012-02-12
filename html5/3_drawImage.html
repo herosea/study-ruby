@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>
+HTML画图片
+</title>
+<script>
+window.addEventListener('load', function(){
+  var elem = document.getElementById('myCanvas');
+  if(elem && elem.getContext){
+    var context = elem.getContext('2d');
+    if (context){
+      context.fillStyle = '#00f';
+      context.strokeStyle = '#f00';
+      var image = new Image();
+      image.addEventListener('load', function(){
+        context.drawImage(this, 0, 0);
+        context.drawImage(this, 160, 0, 120, 70);
+        context.drawImage(this, 8, 20, 140, 50, 0, 150, 350, 70);
+      }, false);
+    }
+    image.src = 'image.jpg';
+  }
+}, false);
+</script>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500">
+</canvas>
+</body>
+</html>

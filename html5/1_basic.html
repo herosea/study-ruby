@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'/>
+<title>画一个框</title>
+<script>
+window.addEventListener('load', function(){
+  var elem = document.getElementById("myCanvas");
+  if (elem && elem.getContext){
+    var context = elem.getContext('2d');
+    if(context){
+      context.fillStyle = "#f00";
+      context.fillRect(0, 0, 150, 100);
+    }
+  }
+});
+</script>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="500">
+Fallback content,in case the browser does not support canvas.
+</canvas>
+</body>
+</html>  
